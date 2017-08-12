@@ -4,3 +4,4 @@ include:
   - common.users
   - common.keys
   - common.sudoers
+  - common.sshd_config

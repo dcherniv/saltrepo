@@ -17,3 +17,6 @@ include:
       - sls: common.groups
 {% endfor %}
 
+drweb:
+   user.absent
+
