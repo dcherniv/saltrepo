@@ -3,6 +3,9 @@ include:
 
 {% for user, args in salt['pillar.get']('users', {}).items() %}
 /etc/ssh/keys/{{user}}:
+  {% if args.disabled == True %}
+  file.absent
+  {% else%}
   file.managed:
     - user: {{ user }}
     - group: {{ args.gid }}
@@ -10,5 +13,6 @@ include:
     - contents: {{ args.sshkey }}
     - require:
       - sls: common.users 
+  {% endif %}
 {% endfor %}
         

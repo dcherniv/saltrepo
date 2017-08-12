@@ -3,6 +3,11 @@ include:
 
 {% for user, args in salt['pillar.get']('users', {}).items() %}
 {{ user }}:
+  {% if args.disabled == True %}
+  user.absent:
+    - purge: True
+    - force: True
+  {% else%}
   user.present:
     - fullname: {{ user }}
     - shell: /bin/bash
@@ -13,10 +18,8 @@ include:
     - password: {{ args.password }}
     - groups:
       - wheel
-    - require: 
+    - require:
       - sls: common.groups
+  {% endif %}
 {% endfor %}
-
-drweb:
-   user.absent
 
