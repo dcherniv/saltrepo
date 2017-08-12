@@ -1,3 +1,6 @@
+include:
+  - common.groups
+
 {% for user, args in salt['pillar.get']('users', {}).items() %}
 {{ user }}:
   user.present:
@@ -10,5 +13,7 @@
     - password: {{ args.password }}
     - groups:
       - wheel
+    - require: 
+      - sls: common.groups
 {% endfor %}
 
