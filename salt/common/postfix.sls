@@ -8,3 +8,4 @@ postfix:
       - postfix
     - require:
       - sls: common.repos    
+      - sls: common.packages
