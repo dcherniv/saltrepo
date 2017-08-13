@@ -5,3 +5,5 @@ include:
   - common.keys
   - common.sudoers
   - common.sshd_config
+  - common.repos
+  - common.postfix

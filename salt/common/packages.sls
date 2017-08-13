@@ -7,4 +7,8 @@ common_packages:
       - vim
       {% endif %}
       - nano  
-      - nginx
+mariadb:  
+  pkg.purged:
+    - pkgs:
+      - mariadb
+      - mariadb-libs
