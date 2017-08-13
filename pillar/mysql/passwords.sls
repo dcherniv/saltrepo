@@ -1,5 +1,5 @@
 mysql:  
   users:
     root:
-      password: 'changeme'
+      password: 'MuchSecure'
       disabled: False
