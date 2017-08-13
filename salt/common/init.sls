@@ -1,5 +1,6 @@
 include:
   - common.packages
+  - common.services
   - common.groups
   - common.users
   - common.keys

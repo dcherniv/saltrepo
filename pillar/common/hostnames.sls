@@ -1,0 +1,2 @@
+hostnames:
+  master: master01

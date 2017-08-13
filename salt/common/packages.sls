@@ -7,6 +7,9 @@ common_packages:
       - vim
       {% endif %}
       - nano  
+      - at
+      - salt-minion
+
 mariadb:  
   pkg.purged:
     - pkgs:

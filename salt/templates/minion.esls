@@ -1,0 +1,10 @@
+master: {{ salt['pillar.get']('hostnames:master', "master01") }}
+pillarenv: base
+mysql.host: 'localhost'
+mysql.port: 3306
+mysql.user: 'root'
+mysql.pass: '{{ salt['pillar.get']('mysql:users:root:password', "") }}'
+mysql.db: 'mysql'
+mysql.unix_socket: '/var/lib/mysql/mysql.sock'
+mysql.charset: 'utf8'
+
